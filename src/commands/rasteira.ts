@@ -20,10 +20,16 @@ export const rasteira: Command = {
     'mostrasuaverdadeirapersonalidadevagabunda',
   ],
   exec: async (input, args, user) => {
-    send(
-      `@${user.username} enfia uma rasteira na cara du ${args.join(
-        ' '
-      )} que ${getOffense()} PunOko`
-    );
+    if (args.join(' ').length === 1) {
+      send(
+        `@${user.username} enfia uma rasteira na cara du ${args.join(
+          ' '
+        )} que ${getOffense()} PunOko`
+      );
+    } else if (args.join(' ').length > 1) {
+      send(`@${user.username} é a belle belinha`); // pegou herpes????
+    } else {
+      send(`@${user.username} ${getOffense}`);
+    }
   },
 };

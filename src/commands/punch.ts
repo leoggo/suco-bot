@@ -14,10 +14,24 @@ const getOffense = () => offenses[Math.floor(Math.random() * offenses.length)];
 export const punch: Command = {
   aliases: ['punch', 'soco', 'bate', 'knockout'],
   exec: async (input, args, user) => {
-    send(
-      `@${user.username} enfia um socão na cara de ${args.join(
-        ' '
-      )} que ${getOffense()} PunOko BOP`
-    );
+    if (args.join(' ').length === 1) {
+      send(
+        `@${user.username} enfia um socão na cara de ${args.join(
+          ' '
+        )} que ${getOffense()} PunOko BOP`
+      );
+    } else if (args.join(' ').length > 1) {
+      send(
+        `@${user.username} enfia um socão na cara de ${args.join(
+          ' '
+        )} que ${getOffense()} PunOko BOP`
+      );
+    } else {
+      send(
+        `@${user.username} enfia um socão na cara de ${args.join(
+          ' '
+        )} que ${getOffense()} PunOko BOP`
+      );
+    }
   },
 };

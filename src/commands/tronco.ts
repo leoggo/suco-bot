@@ -24,12 +24,19 @@ const getTronco = (userName: PropertyKey) => {
     return troncos[userName];
 }
 
+
 export const tronco: Command = {
   aliases: ['tronco', 'geba', 'giromba', 'jamanta', 'pika', 'bengaladokid', 'britadeira', 'trozoba', 'pipico', 'anaconda', 'trambolha', 'baqueta'],
   exec: async (input, args, user) => {
-    const [size, message] = getTronco(user.userName)
-    send(
-      `@${user.username} tem ${size}cm de tronco ${message}`
-    );
+    if (args.join(' ').length === 0) {
+      const [size, message] = getTronco(user.userName)
+      send(
+        `@${user.username} tem ${size}cm de tronco ${message}`
+      );
+    } else if (args.join(' ').length > 1) {
+      send("tem algum madeirieiro aqui. tao pedindo tronco de mais");
+    } else {
+      send(`@${user.username} ${getOffense}`); // poe o tronco do amiguinho aqui
+    }
   },
 };
